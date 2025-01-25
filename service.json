@@ -1,0 +1,22 @@
+[
+    {
+        "planName": "本地测试",
+        "services": [
+            {
+                "lastStartTime": "",
+                "order": 1,
+                "path": "C:/Users/fuweiwei2/Desktop/自动重启/first.exe",
+                "serviceName": "first"
+            },
+            {
+                "lastStartTime": "",
+                "order": 2,
+                "path": "D:/Music/CloudMusic/cloudmusic.exe",
+                "serviceName": "网易云"
+            }
+        ]
+    },
+    {
+        "IsAutoStart": true
+    }
+]
