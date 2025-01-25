@@ -11,7 +11,7 @@ public:
     AutoStartPlan();
     ~AutoStartPlan();
     bool isRunning(Service service);  // 判断服务是否运行中
-    void isExcute(Service service);   // 服务是否启动成功
+    void isExcute(Service& service);   // 服务是否启动成功
     bool savePlan();    //保存服务启动计划
     void addService(Service ser);       //增加服务
     void deletePlan();      //删除计划

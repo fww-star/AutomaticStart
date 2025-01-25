@@ -41,7 +41,7 @@ bool AutoStartPlan::isRunning(Service service) {
 }
 
 // 服务启动
-void AutoStartPlan::isExcute(Service service) {
+void AutoStartPlan::isExcute(Service& service) {
     std::ostringstream& log = *( *logs )[this->planName];
     std::string path = service.getPath();
     if ( isRunning(service) ) {
@@ -55,6 +55,7 @@ void AutoStartPlan::isExcute(Service service) {
     if ( !success ) {
         log << "【" << getCurrentTimeAsString() << "】" << "服务" << service.getName() << "启动失败 " << std::endl;
     }
+    service.setStartTime(getCurrentTimeAsString());
     int times = 10;
     int i = 0;
     while ( true ) {
@@ -89,7 +90,7 @@ void AutoStartPlan::start() {
     int count = 4;
     orderSort(this->services);
     //std::ostringstream& log = *( *logs )[this->planName];
-    for ( const Service& serv : *this->services ) {
+    for (Service& serv : *this->services ) {
         isExcute(serv);
         updateMainThread();
     }
